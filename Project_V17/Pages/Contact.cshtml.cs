@@ -12,7 +12,7 @@ namespace Project_V17.Pages
 
         public void OnGet()
         {
-            Message = "Your contact page.";
+            Message = "HR Training and Development";
         }
     }
 }
