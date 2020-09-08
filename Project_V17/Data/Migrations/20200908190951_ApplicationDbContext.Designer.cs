@@ -10,8 +10,8 @@ using Project_V17.Data;
 namespace Project_V17.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200908154629_ApplicationDBContext")]
-    partial class ApplicationDBContext
+    [Migration("20200908190951_ApplicationDbContext")]
+    partial class ApplicationDbContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -184,6 +184,20 @@ namespace Project_V17.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Project_V17.Models.Department", b =>
+                {
+                    b.Property<int>("DepID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DepartmentName")
+                        .IsRequired();
+
+                    b.HasKey("DepID");
+
+                    b.ToTable("Department");
                 });
 
             modelBuilder.Entity("Project_V17.Models.FSApp", b =>

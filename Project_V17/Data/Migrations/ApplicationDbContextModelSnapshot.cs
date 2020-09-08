@@ -184,6 +184,20 @@ namespace Project_V17.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Project_V17.Models.Department", b =>
+                {
+                    b.Property<int>("DepID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DepartmentName")
+                        .IsRequired();
+
+                    b.HasKey("DepID");
+
+                    b.ToTable("Department");
+                });
+
             modelBuilder.Entity("Project_V17.Models.FSApp", b =>
                 {
                     b.Property<int>("AppID")
