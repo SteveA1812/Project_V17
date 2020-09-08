@@ -10,18 +10,17 @@ namespace Project_V17.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        private DbContextOptions<FSAPPSContext> options;
+       
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
 
-        public ApplicationDbContext(DbContextOptions<FSAPPSContext> options)
-        {
-            this.options = options;
-        }
+      
 
         public DbSet<Project_V17.Models.FSApp> FSApp { get; set; }
+
+        public DbSet<Project_V17.Models.Department> Department { get; set; }
     }
 }
